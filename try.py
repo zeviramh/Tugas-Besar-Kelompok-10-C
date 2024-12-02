@@ -137,7 +137,7 @@ def pilih_kendaraan():
     tk.Label(root, text="Nomor Plat Kendaraan").pack(pady=10)
     nomor_plat_entry = tk.Entry(root)
     nomor_plat_entry.pack()
-
+    
     def simpan_jenis_kendaraan():
         data_parkir["jenis_kendaraan"] = kendaraan_var.get()
         data_parkir["nomor_plat"] = nomor_plat_entry.get().strip()
