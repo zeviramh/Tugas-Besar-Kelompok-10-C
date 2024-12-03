@@ -139,11 +139,13 @@ def pilih_kendaraan():
     nomor_plat_entry.pack()
     
     def simpan_jenis_kendaraan():
+        nomor_plat = nomor_plat_entry.get().strip()
+        if not (5 <= len(nomor_plat) <= 11):
+            messagebox.showerror("Error", "Nomor plat kendaraan harus terdiri dari 5 hingga 11 karakter.")
+            return
+        
         data_parkir["jenis_kendaraan"] = kendaraan_var.get()
         data_parkir["nomor_plat"] = nomor_plat_entry.get().strip()
-        if not data_parkir["nomor_plat"]:
-            messagebox.showerror("Error", "Nomor plat kendaraan harus diisi.")
-            return
         waktu_masuk_window()
 
     tk.Button(root, text="Lanjutkan", command=simpan_jenis_kendaraan).pack(pady=10)
