@@ -137,8 +137,8 @@ def pilih_kendaraan():
     tk.Label(root, text="Pilih Jenis Kendaraan").pack(pady=10)
     kendaraan_var = tk.StringVar(value="motor")
 
-    tk.Radiobutton(root, text="Motor", variable=kendaraan_var, value="motor").pack(anchor="w", padx=20)
-    tk.Radiobutton(root, text="Mobil", variable=kendaraan_var, value="mobil").pack(anchor="w", padx=20)
+    tk.Radiobutton(root, text="Motor", variable=kendaraan_var, value="motor", bg= "pink", fg= "black").pack(anchor="w", padx=20)
+    tk.Radiobutton(root, text="Mobil", variable=kendaraan_var, value="mobil", bg= "pink", fg= "black").pack(anchor="w", padx=20)
 
     tk.Label(root, text="Nomor Plat Kendaraan").pack(pady=10)
     nomor_plat_entry = tk.Entry(root)
@@ -162,7 +162,7 @@ def pilih_kendaraan():
 def set_background(window):
     image_path = "pink.png"  # Ganti dengan nama file gambar Anda
     img = Image.open(image_path)
-    img = img.resize((800, 600))  # Sesuaikan ukuran dengan window
+    img = img.resize((500, 300))  # Sesuaikan ukuran dengan window
     bg_image = ImageTk.PhotoImage(img)
     bg_label = tk.Label(window, image=bg_image)
     bg_label.image = bg_image  # Simpan referensi agar gambar tidak hilang
