@@ -27,32 +27,11 @@ def login():
     
     if check_login(username, password):
         messagebox.showinfo("Login Berhasil", f"Selamat datang, {username}!")
-        root.destroy()  # Menutup jendela setelah login berhasil
+        pilih_kendaraan()
     else:
         messagebox.showerror("Login Gagal", "Username atau password salah.")
 
-# Membuat jendela Tkinter
-root = tk.Tk()
-root.title("Login")
-root.geometry("500x300")
-
-# Label dan Entry untuk username
-tk.Label(root, text="Username:").pack(pady=10, padx=50)
-username_entry = tk.Entry(root)
-username_entry.pack(pady=10, padx=50)
-
-# Label dan Entry untuk password
-tk.Label(root, text="Password:").pack(pady=10, padx=50)
-password_entry   = tk.Entry(root, show="*")
-password_entry.pack(pady=10, padx=50)
-
-# Tombol Login
-login_button = tk.Button(root, text="Login", command=login)
-login_button.pack(pady=10, padx=50)
-
-# Menjalankan aplikasi
-root.mainloop()
-
+# Fungsi untuk menyimpan data ke CSV
 csv_file = "database.csv"
 def simpan_ke_csv(jenis_kendaraan, nomor_plat, waktu_masuk, waktu_keluar,harga_parkir):
     # Jika file belum ada, buat file baru dengan header
@@ -247,5 +226,19 @@ def set_background(window):
 root = tk.Tk()
 root.title("Sistem Parkir")
 root.geometry("500x300")
-pilih_kendaraan()
+
+set_background(root)
+
+# Membuat form login
+tk.Label(root, text="Username:", bg= "#FFACC5", fg= "black").pack(pady=10, padx=50)
+username_entry = tk.Entry(root)
+username_entry.pack(pady=10, padx=50)
+
+tk.Label(root, text="Password:", bg= "#FFACC5", fg= "black").pack(pady=10, padx=50)
+password_entry = tk.Entry(root, show="*")
+password_entry.pack(pady=10, padx=50)
+
+login_button = tk.Button(root, text="Login", bg= "lightgrey", fg= "black", command=login)
+login_button.pack(pady=10, padx=50)
+
 root.mainloop()
