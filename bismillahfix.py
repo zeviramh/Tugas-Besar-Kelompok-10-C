@@ -38,13 +38,13 @@ def kendaraan_masuk():
     
     set_background(root)
     
-    tk.Label(root, text="Kendaraan Masuk").pack()
+    tk.Label(root, text="Kendaraan Masuk", bg= "#FFACC5", fg= "black").pack()
     kendaraan_var = tk.StringVar(value="motor")
     
-    tk.Radiobutton(root, text="Motor", variable=kendaraan_var, value="motor").pack()
-    tk.Radiobutton(root, text="Mobil", variable=kendaraan_var, value="mobil").pack()
+    tk.Radiobutton(root, text="Motor", variable=kendaraan_var, value="motor", bg= "#FFACC5", fg= "black").pack()
+    tk.Radiobutton(root, text="Mobil", variable=kendaraan_var, value="mobil", bg= "#FFACC5", fg= "black").pack()
 
-    tk.Label(root, text="Masukkan Nomor Plat").pack()
+    tk.Label(root, text="Masukkan Nomor Plat", bg= "#FFACC5", fg= "black").pack()
     nomor_plat_entry = tk.Entry(root)
     nomor_plat_entry.pack()
 
@@ -148,13 +148,13 @@ def kendaraan_keluar():
     
     set_background(root)
         
-    tk.Label(root, text="Kendaraan Keluar").pack()
+    tk.Label(root, text="Kendaraan Keluar", bg= "#FFACC5", fg= "black").pack()
     kendaraan_var = tk.StringVar(value="motor")
     
-    tk.Radiobutton(root, text="Motor", variable=kendaraan_var, value="motor").pack()
-    tk.Radiobutton(root, text="Mobil", variable=kendaraan_var, value="mobil").pack()
+    tk.Radiobutton(root, text="Motor", variable=kendaraan_var, value="motor", bg= "#FFACC5", fg= "black").pack()
+    tk.Radiobutton(root, text="Mobil", variable=kendaraan_var, value="mobil", bg= "#FFACC5", fg= "black").pack()
 
-    tk.Label(root, text="Masukkan Nomor Plat").pack()
+    tk.Label(root, text="Masukkan Nomor Plat", bg= "#FFACC5", fg= "black").pack()
     nomor_plat_entry = tk.Entry(root)
     nomor_plat_entry.pack()
 
@@ -184,11 +184,11 @@ def waktu_masuk_pintu_keluar():
     tk.Label(root, text="Waktu Masuk (Manual)", bg="#FFACC5", fg="black").pack(pady=10)
 
     # Label untuk Tanggal dan Waktu
-    tk.Label(root, text="Masukkan Tanggal (DD-MM-YYYY)").pack(pady=5)
+    tk.Label(root, text="Masukkan Tanggal (DD-MM-YYYY)", bg= "#FFACC5", fg= "black").pack(pady=5)
     tanggal_entry = tk.Entry(root)
     tanggal_entry.pack(pady=5)
 
-    tk.Label(root, text="Masukkan Waktu (HH.MM)").pack(pady=5)
+    tk.Label(root, text="Masukkan Waktu (HH.MM)", bg= "#FFACC5", fg= "black").pack(pady=5)
     waktu_entry = tk.Entry(root)
     waktu_entry.pack(pady=5)
 
@@ -321,9 +321,9 @@ def kembali_ke_menu():
         
     set_background(root)
 
-    tk.Label(root, text="Sistem Parkir", font=("Arial", 16)).pack()
-    tk.Button(root, text="Kendaraan Masuk", command=kendaraan_masuk).pack()
-    tk.Button(root, text="Kendaraan Keluar", command=kendaraan_keluar).pack()   
+    tk.Label(root, text="Sistem Parkir", font=("Arial", 16), bg= "#FFACC5", fg= "black").pack()
+    tk.Button(root, text="Kendaraan Masuk", command=kendaraan_masuk, bg= "#FFACC5", fg= "black").pack()
+    tk.Button(root, text="Kendaraan Keluar", command=kendaraan_keluar, bg= "#FFACC5", fg= "black").pack()   
                 
 def set_background(window):
     image_path = "pink.png"  # Ganti dengan nama file gambar Anda
