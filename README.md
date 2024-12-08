@@ -14,6 +14,15 @@ Aplikasi Sistem Pembayaran Parkir adalah alat digital yang membantu Anda mengawa
 - Menyimpan data nomor karcis, jenis kendaraan, plat kendaraan, waktu masuk, waktu keluar, lama kendaraan parkir, dan tarif parkir pada file database.csv
 - Membuat nomor karcis yang berasal dari input data jenis kendaraan, plat kendaraan, dan waktu masuk kendaraan yang nantinya digunakan untuk kendaraan keluar
 
+# Library
+1. **Tkinter**
+2. **tkinter.messagebox**
+3. **datetime**
+4. **math**
+5. **PIL**
+6. **random**
+7. **csv**
+
 # Gambar & Penjelasan Flowchart
 ![flowchartsendiri-Page-1 drawio (1)](https://github.com/user-attachments/assets/88f3d991-112d-4ce3-b910-4ac40b7628b0)
 - Mulai, program dimulai dari menu ini
