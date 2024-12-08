@@ -73,3 +73,6 @@ Waktu keluar
 Lama parkir
 Biaya parkir
 - Selesai : Proses berakhir.
+
+# Gambar Sitemap
+![sitemap drawio (1)](https://github.com/user-attachments/assets/69eb6016-748c-488a-bd47-9fc37cae6ac1)
