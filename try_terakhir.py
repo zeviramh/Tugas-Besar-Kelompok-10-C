@@ -151,7 +151,7 @@ def simpan_data(waktu_window):
     
 # Fungsi untuk menyimpan data ke CSV
 csv_file = "database.csv"
-def simpan_ke_csv(jenis_kendaraan, nomor_plat, tanggal_masuk, waktu_masuk, waktu_keluar,lama_parkir, harga_parkir):
+def simpan_ke_csv(nomor_karcis, jenis_kendaraan, nomor_plat, tanggal_masuk, waktu_masuk, waktu_keluar,lama_parkir, harga_parkir):
     # Jika file belum ada, buat file baru dengan header
     try:
         header = ["Nomor Karcis", "Jenis Kendaraan", "Nomor Plat", "Tanggal Masuk", "Waktu Masuk", "Waktu Keluar", "Lama Parkir", "Harga Parkir"]
@@ -169,7 +169,7 @@ def simpan_ke_csv(jenis_kendaraan, nomor_plat, tanggal_masuk, waktu_masuk, waktu
             writer = csv.writer(f)
             if file_baru:
                 writer.writerow(header)  # Tulis header jika file baru
-            writer.writerow([jenis_kendaraan, nomor_plat, tanggal_masuk, waktu_masuk, waktu_keluar, lama_parkir, harga_parkir])
+            writer.writerow([nomor_karcis, jenis_kendaraan, nomor_plat, tanggal_masuk, waktu_masuk, waktu_keluar, lama_parkir, harga_parkir])
         messagebox.showinfo("Sukses", f"Data berhasil disimpan ke {csv_file}")
     except Exception as e:
         messagebox.showerror("Error", f"Gagal menyimpan data ke CSV: {str(e)}")
@@ -306,10 +306,11 @@ def hitung_biaya_parkir():
         else:
             messagebox.showerror("Error", "Jenis kendaraan tidak valid.")
             return
-        simpan_ke_csv (jenis_kendaraan, nomor_plat, data_parkir["tanggal_masuk"], data_parkir["waktu_masuk"], data_parkir["waktu_keluar"], lama_parkir, harga_parkir)
+        simpan_ke_csv (data_parkir["nomor_karcis"], jenis_kendaraan, nomor_plat, data_parkir["tanggal_masuk"], data_parkir["waktu_masuk"], data_parkir["waktu_keluar"], lama_parkir, harga_parkir)
         
         # Tampilkan hasil
         messagebox.showinfo("Hasil",
+            f"Nomor Karcis: {data_parkir['nomor_karcis']}\n"
             f"Jenis Kendaraan: {jenis_kendaraan.capitalize()}\n"
             f"Nomor Plat: {nomor_plat}\n"
             f"Waktu Masuk: {waktu_masuk} ({datetime_masuk.strftime('%A')})\n"
@@ -329,7 +330,7 @@ def kembali_ke_menu():
         
     set_background(root)
 
-    tk.Label(root, text="Sistem Parkir", font=("Arial", 16), bg= "#FFACC5", fg= "black").pack()
+    tk.Label(root, text="Pilih Menu", font=("Arial", 16), bg= "#FFACC5", fg= "black").pack()
     tk.Button(root, text="Kendaraan Masuk", command=kendaraan_masuk, bg= "#FFACC5", fg= "black").pack()
     tk.Button(root, text="Kendaraan Keluar", command=kendaraan_keluar, bg= "#FFACC5", fg= "black").pack()   
                 
