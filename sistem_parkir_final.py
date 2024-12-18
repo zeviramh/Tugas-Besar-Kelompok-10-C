@@ -148,6 +148,30 @@ def waktu_masuk_pintu_masuk():
         
         kembali_ke_menu()
     
+    # Menyimpan data kendaraan masuk ke file CSV
+    csv_file_masuk = "datamasuk.csv"
+    try:
+        header = ["Nomor Karcis", "Jenis Kendaraan", "Nomor Plat", "Tanggal Masuk", "Waktu Masuk"]
+        file_baru = False
+
+        # Periksa apakah file CSV sudah ada
+        try:
+            with open(csv_file_masuk, "r") as f:
+                pass
+        except FileNotFoundError:
+            file_baru = True
+
+        # Tulis data ke file CSV
+        with open(csv_file_masuk, "a", newline="") as f:
+            writer = csv.writer(f)
+            if file_baru:
+                writer.writerow(header)  # Tulis header jika file baru
+            writer.writerow([data_parkir["nomor_karcis"], data_parkir["jenis_kendaraan"],
+                             data_parkir["nomor_plat"], data_parkir["tanggal_masuk"],
+                             data_parkir["waktu_masuk"]])
+    except Exception as e:
+        messagebox.showerror("Error", f"Gagal menyimpan data kendaraan masuk ke file CSV. Kesalahan: {str(e)}")
+    
 def simpan_data(waktu_window):
     # Menyimpan data dan menutup jendela waktu
     messagebox.showinfo("Sukses", "Data kendaraan masuk berhasil disimpan.")
